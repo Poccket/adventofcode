@@ -1,8 +1,9 @@
 location_lists = [[], []]
 with open('inputs/day1.txt', 'r') as f:
     for line in f:
-        location_lists[0] += [int(line[:5])]
-        location_lists[1] += [int(line[8:13])]
+        line = line.split()
+        location_lists[0].append(int(line[0]))
+        location_lists[1].append(int(line[1]))
 
 location_lists[0].sort()
 location_lists[1].sort()
