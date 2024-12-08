@@ -1,5 +1,5 @@
-with open('inputs/day4.txt', 'r') as f:
-    word_search = f.readlines()
+import common
+word_search = common.load_day(4, True)
 
 # part 1
 directions = [(-1, -1), (-1, 0), (-1, 1),

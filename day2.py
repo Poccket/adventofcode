@@ -1,6 +1,6 @@
 from copy import copy
-with open('inputs/day2.txt', 'r') as f:
-    reports = f.readlines()
+import common
+reports = common.load_day(2, True)
 
 # part 1
 safety = 0

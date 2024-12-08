@@ -1,8 +1,8 @@
-from copy import copy, deepcopy
+from copy import deepcopy
 from datetime import datetime
 now = datetime.now()
-with open('inputs/day6.txt', 'r') as f:
-    map_file = f.readlines()
+import common
+map_file = common.load_day(6, True)
 
 class Vector():
     def __init__(self, y, x):

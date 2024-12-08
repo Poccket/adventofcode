@@ -1,6 +1,6 @@
 from copy import copy
-with open('inputs/day5.txt', 'r') as f:
-    manual_updates = f.readlines()
+import common
+manual_updates = common.load_day(5, True)
 for i in range(len(manual_updates)):
     manual_updates[i] = manual_updates[i].rstrip()
 

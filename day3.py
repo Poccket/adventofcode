@@ -1,6 +1,6 @@
 import re
-with open('inputs/day3.txt', 'r') as f:
-    program = f.read()
+import common
+program = common.load_day(3, True, lines=False)
 
 # part 1
 matches = re.findall(r"mul\([0-9]+\,[0-9]+\)", program)
