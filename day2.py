@@ -1,7 +1,8 @@
 from copy import copy
 import common
-reports = common.load_day(2, True)
+reports = common.load_day(2, False)
 
+time = common.Timer()
 # part 1
 safety = 0
 safe_change = (1,3)
@@ -19,8 +20,9 @@ for report in reports:
             break
     if safe:
         safety += 1
-print(safety)
-
+common.print_result(safety)
+time.stop()
+time.restart()
 # part 2
 safety = 0
 for report in reports:
@@ -41,5 +43,5 @@ for report in reports:
         if safe:
             safety += 1
             break
-
-print(safety)
+common.print_result(safety)
+time.stop()

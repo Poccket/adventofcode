@@ -1,9 +1,7 @@
 from copy import deepcopy
-from datetime import datetime
-now = datetime.now()
 import common
-map_file = common.load_day(6, True)
-
+map_file = common.load_day(6, False)
+time = common.Timer()
 class Vector():
     def __init__(self, y, x):
         self.x = x
@@ -75,8 +73,9 @@ while True:
 for line in stringify_map(map):
     for arrow in facing_blocks:
         distance += ''.join(line).count(arrow)
-print(distance)
-
+common.print_result(distance)
+time.stop()
+time.restart()
 # part 2
 loops = 0
 for position in visited_positions:
@@ -104,6 +103,5 @@ for position in visited_positions:
             imaginary_map[guard_position.y][guard_position.x] += [guard_facing]
     if found_loop:
         loops += 1
-print(loops)
-total = datetime.now() - now
-print(total)
+common.print_result(loops)
+time.stop()

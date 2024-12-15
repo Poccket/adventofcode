@@ -1,6 +1,7 @@
 from copy import copy
 import common
-manual_updates = common.load_day(5, True)
+manual_updates = common.load_day(5, False)
+time = common.Timer()
 for i in range(len(manual_updates)):
     manual_updates[i] = manual_updates[i].rstrip()
 
@@ -11,7 +12,6 @@ for line in manual_updates:
         if not (line[:line.index("|")] in rules.keys()):
             rules[line[:line.index("|")]] = []
         rules[line[:line.index("|")]] += [line[line.index("|")+1:]]
-
 middles = 0
 valid = []
 for z, line in enumerate(manual_updates):
@@ -27,8 +27,9 @@ for z, line in enumerate(manual_updates):
                         valid[z] = False
         if valid[z]:
             middles += int(pages[int((len(pages) - 1)/2)])
-print(middles)
-                        
+common.print_result(middles)
+time.stop()
+time.restart()                  
 # day 2
 rules = {}
 for line in manual_updates:
@@ -36,7 +37,6 @@ for line in manual_updates:
         if not (line[:line.index("|")] in rules.keys()):
             rules[line[:line.index("|")]] = []
         rules[line[:line.index("|")]] += [line[line.index("|")+1:]]
-
 middles = 0
 for z, line in enumerate(manual_updates):
     if valid[z]:
@@ -55,5 +55,5 @@ for z, line in enumerate(manual_updates):
                     higher += 1
             if lower == higher:
                 middles += int(page)
-                        
-print(middles)
+common.print_result(middles)
+time.stop()

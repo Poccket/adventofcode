@@ -1,9 +1,6 @@
-
-from datetime import datetime
 import common
-test_data = common.load_day(7, True)
-now = datetime.now()
-
+test_data = common.load_day(7, False)
+time = common.Timer()
 def rebase(n, b, pad=0):
     if n == 0:
         return '0'.rjust(pad, '0')
@@ -32,12 +29,11 @@ for datum in data:
         if evald == int(datum[0]):
             total += evald
             break
-print(total)
-time = datetime.now() - now
-print(time)
+common.print_result(total)
+time.stop()
+time.restart()
 
 # Part 2
-now = datetime.now()
 operators = ("+","*","||")
 total = 0
 for datum in data:
@@ -59,6 +55,4 @@ for datum in data:
             total += evald
             break
 print(total)
-
-time = datetime.now() - now
-print(time)
+time.stop()
