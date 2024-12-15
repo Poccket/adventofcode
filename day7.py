@@ -54,5 +54,5 @@ for datum in data:
         if evald == int(datum[0]):
             total += evald
             break
-print(total)
+common.print_result(total)
 time.stop()
